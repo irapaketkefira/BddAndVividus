@@ -1,3 +1,6 @@
+Meta:
+	@skip
+
 Scenario: sign up user
 Given I am on the main application page
 When I click on an element by the xpath '//a[@class = 'btn btn-sm btn-link text-white']'
@@ -17,3 +20,13 @@ When I click on an element by the xpath '//button[@data-test-id='header-member-m
 When I click on an element by the xpath '//a[@data-test-id='header-member-menu-profile']'
 Then the text 'Irina Zuikevich' exists
 And the text 'zuikinst@gmail.com' exists
+
+Scenario: Open boards page
+Given I am on a page with the URL 'https://trello.com/irinazuikevich/boards'
+When I establish baseline with `boardsPage`
+
+Scenario: Open trello templates page
+Given I am on a page with the URL 'https://trello.com/templates'
+When I establish baseline with `templatePage` 
+
+
